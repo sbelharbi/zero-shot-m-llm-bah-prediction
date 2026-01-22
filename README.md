@@ -1,4 +1,4 @@
-# Video Ambivalence Classification
+### Pytorch code for zero-shot precition of Ambivalence/Hesitancy in BAH paper cited below. 
 
 # [*BAH* Dataset for Ambivalence/Hesitancy Recognition in Videos for Behavioural Change](https://arxiv.org/pdf/2505.19328)
 by
