@@ -1,5 +1,83 @@
 # Video Ambivalence Classification
 
+# [*BAH* Dataset for Ambivalence/Hesitancy Recognition in Videos for Behavioural Change](https://arxiv.org/pdf/2505.19328)
+by
+**Manuela González-González<sup>3,4</sup>,
+Soufiane Belharbi<sup>1</sup>,
+Muhammad Osama Zeeshan<sup>1</sup>,
+Masoumeh Sharafi<sup>1</sup>,
+Muhammad Haseeb Aslam<sup>1</sup>,
+Alessandro Lameiras Koerich<sup>2</sup>,
+Marco Pedersoli<sup>1</sup>,
+Simon L. Bacon<sup>3,4</sup>,
+Eric Granger<sup>1</sup>**
+
+<sup>1</sup> LIVIA, Dept. of Systems Engineering, ETS Montreal, Canada
+<br/>
+<sup>2</sup> LIVIA, Dept. of Software and IT Engineering, ETS Montreal, Canada
+<br/>
+<sup>3</sup> Dept. of Health, Kinesiology, \& Applied Physiology, Concordia University, Montreal, Canada
+<br/>
+<sup>4</sup> Montreal Behavioural Medicine Centre, CIUSSS Nord-de-l’Ile-de-Montréal, Canada
+
+
+
+<p align="center"><img src="doc/demo.png" alt="outline" width="90%"></p>
+<!-- <br/> -->
+<p align="center"><img src="doc/promo.png" alt="outline" width="90%"></p>
+
+[![Page](https://img.shields.io/badge/Dataset%20Webpage-orange)](https://sbelharbi.github.io/bah-dataset)
+[![arXiv](https://img.shields.io/badge/arXiv-2505.19328-b31b1b.svg?logo=arxiv&logoColor=B31B1B)](https://arxiv.org/pdf/2505.19328)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-yellow)](https://huggingface.co/sbelharbi/bah-dataset)
+
+## Abstract
+Recognizing complex emotions linked to ambivalence and hesitancy (A/H) can play
+a critical role in the personalization and effectiveness of digital behaviour
+change interventions. These subtle and conflicting emotions are manifested by
+a discord between multiple modalities, such as facial and vocal expressions,
+and body language. Although experts can be trained to identify A/H, integrating
+them into digital interventions is costly and less effective.
+Automatic learning systems provide a cost-effective alternative that can adapt
+to individual users, and operate  seamlessly within real-time, resource-limited
+ environments. However, there are currently no datasets available for the design
+ of ML models to recognize A/H.
+This paper introduces a first Behavioural Ambivalence/Hesitancy (*BAH*) dataset
+collected for subject-based multimodal recognition of A/H in videos.  It
+contains videos from 224 subjects captured across 9 provinces in Canada, with
+different age, and ethnicity. Through our web platform, we recruited subjects
+to answer 7 questions, some of which were designed to elicit A/H while recording
+ themselves via webcam with microphone. *BAH* amounts to 1,118 videos for a total
+ duration of 8.26 hours with 1.5 hours of A/H.  Our behavioural team annotated
+ timestamp segments to indicate where A/H occurs, and provide frame- and
+ video-level annotations with the A/H cues. Video transcripts and their
+ timestamps are also included, along with cropped and aligned faces in each
+ frame, and a variety of subject meta-data.
+Additionally, this paper provides preliminary benchmarking results baseline
+models for *BAH* at frame- and video-level recognition with mono- and multi-modal
+setups. It also includes results on models for zero-shot prediction, and for
+personalization using unsupervised domain adaptation. The limited performance
+of baseline models highlights the challenges of recognizing A/H in real-world
+videos.
+
+
+**Code: Pytorch 2.2.2**
+
+
+## Citation:
+```
+@article{gonzalez-25-bah,
+  title={{BAH} Dataset for Ambivalence/Hesitancy Recognition in Videos for Behavioural Change},
+  author={González-González, M. and Belharbi, S. and Zeeshan, M. O. and
+    Sharafi, M. and Aslam, M. H and Pedersoli, M. and Koerich, A. L. and
+    Bacon, S. L. and Granger, E.},
+  journal={CoRR},
+  volume={abs/2505.19328},
+  year={2025}
+}
+```
+
+
+
 ## Overview
 This code provides the baseline results for the Video Level Classification on the BAH dataset with Zero Shot LVLM.
 This code leverages the VideoLLaVA-7B model to perform binary emotion classification on videos. It supports multiple prompting strategies including definition-based and transcript-augmented approaches.
