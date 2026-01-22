@@ -88,8 +88,7 @@ This code leverages the VideoLLaVA-7B model to perform binary emotion classifica
 - Multiple prompting strategies with varying levels of context
 - Support for video transcripts to enhance classification
 - Reproducible results with fixed random seeds
-- Batch processing of video datasets
-- Performance metrics (Accuracy, F1-score)
+- Performance metrics (F1-score)
 
 ## Requirements
 
