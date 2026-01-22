@@ -8,6 +8,7 @@ import av
 from PIL import Image
 from sklearn.metrics import f1_score, accuracy_score
 from transformers import VideoLlavaProcessor, VideoLlavaForConditionalGeneration
+from bah_metrics import bah_perfs
 
 
 NUM_FRAMES = 8
@@ -198,16 +199,22 @@ def run_all_predictions(test_file_path, test_videos_root_path, prompt_flag, outp
     video_responses_mapped = [0 if response == "Non-Ambivalent" else 1 for response in video_responses]
 
     # Calculate metrics
-    accuracy = accuracy_score(video_labels, video_responses_mapped)
-    f1 = f1_score(video_labels, video_responses_mapped, average='macro')
+    perfs = bah_perfs(np.array(video_labels), np.array(video_responses_mapped), logits=None)
+    print("\nPerformance Metrics:")
+    for k in perfs:
+        print(f"{k}: {perfs[k]}")
+
+
+    # accuracy = accuracy_score(video_labels, video_responses_mapped)
+    # f1 = f1_score(video_labels, video_responses_mapped, average='macro')
 
     # Baseline metrics (all zeros)
-    all_zeros = [0] * len(video_labels)
-    accuracy_all_zeros = accuracy_score(video_labels, all_zeros)    
-    f1_all_zeros = f1_score(video_labels, all_zeros, average='macro')
+    # all_zeros = [0] * len(video_labels)
+    # accuracy_all_zeros = accuracy_score(video_labels, all_zeros)    
+    # f1_all_zeros = f1_score(video_labels, all_zeros, average='macro')
 
-    print(f"\nBaseline (all zeros) - Accuracy: {accuracy_all_zeros:.4f}, F1: {f1_all_zeros:.4f}")
-    print(f"Model Performance - Accuracy: {accuracy:.4f}, F1: {f1:.4f}")
+    # print(f"\nBaseline (all zeros) - Accuracy: {accuracy_all_zeros:.4f}, F1: {f1_all_zeros:.4f}")
+    # print(f"Model Performance - Accuracy: {accuracy:.4f}, F1: {f1:.4f}")
 
     # Save results
     os.makedirs(output_dir, exist_ok=True)
