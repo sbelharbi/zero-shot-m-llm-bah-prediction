@@ -117,12 +117,9 @@ git clone <repository-url>
 cd video-ambivalence-classification
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
 
-3. The model will be automatically downloaded from HuggingFace on first run.
+
+2. The model will be automatically downloaded from HuggingFace on first run.
 
 ## Usage
 
